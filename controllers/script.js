@@ -6,5 +6,5 @@ function getUserInput() {
 
 function redirectPage(username) {
   window.location.href =
-    "templates/flowers.html?username=" + encodeURIComponent(username);
+    "templates/ringverse.html?username=" + encodeURIComponent(username);
 }

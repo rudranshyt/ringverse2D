@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+}
+
+.main {
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0); /* Soft romantic gradient */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: center;
+}
+
+.main-container {
+    position: relative;
+    width: 160px;
+    height: 140px;
+}
+
+/* Base of the Ring Box */
+.box-base {
+    width: 160px;
+    height: 80px;
+    background-color: #b22222; /* Deep red velvet */
+    border-radius: 15px;
+    position: absolute;
+    bottom: 0;
+    box-shadow: inset 0px -5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Lid of the Ring Box */
+.box-lid {
+    width: 160px;
+    height: 60px;
+    background-color: #8b0000; /* Darker red */
+    border-radius: 15px 15px 5px 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: bottom;
+    transform: rotateX(20deg);
+    transition: transform 0.6s ease-in-out;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect - lid opens away */
+.main-container:hover .box-lid {
+    transform: rotateX(120deg);
+}
