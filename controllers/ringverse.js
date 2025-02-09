@@ -19,3 +19,22 @@ document.addEventListener("DOMContentLoaded", function () {
     mainContainer.classList.toggle("open", isOpen);
   });
 });
+
+document.getElementById("ring").addEventListener("click", () => {
+  document.getElementById("pop-up").style.display = "block";
+});
+
+document.getElementById("yes").addEventListener("click", function () {
+  alert("Yay! You said Yes!");
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { x: 0.5, y: 0.5 },
+  });
+  document.getElementById("pop-up").style.display = "none";
+});
+
+document.getElementById("blush").addEventListener("click", function () {
+  alert("Aww! You are blushing!");
+  document.getElementById("pop-up").style.display = "none";
+});
