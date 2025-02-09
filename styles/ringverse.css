@@ -29,8 +29,11 @@ body {
     position: absolute;
     bottom: 0;
     box-shadow: inset 0px -5px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
 }
-
 .box-lid {
     width: 160px;
     height: 60px;
@@ -44,6 +47,48 @@ body {
     transition: transform 0.6s ease-in-out;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
-.main-container:hover .box-lid {
-    transform: rotateX(120deg);
+
+/* Ring */
+.ring {
+    width: 50px;
+    height: 50px;
+    border: 5px solid gold;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%) translateY(40px); /* Separating X and Y */
+    opacity: 0;
+    transition: transform 0.7s ease-in-out, opacity 0.5s ease-in-out;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.8), transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    
+}
+
+/* Diamond */
+.ring::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background: radial-gradient(circle, white, #e0e0e0);
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8);
+    z-index: 1;
+}
+
+/* Open the lid and show the ring */
+.open .box-lid {
+    transform: rotateX(120deg); /* Keeps the lid working */
+}
+
+.open .ring {
+    transform: translateX(-60%) translateY(-54px); /* Moves up while staying centered */
+    opacity: 1;
 }

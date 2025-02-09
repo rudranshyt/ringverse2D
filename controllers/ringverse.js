@@ -10,16 +10,12 @@ displaytext();
 
 document.addEventListener("DOMContentLoaded", function () {
   const boxBase = document.querySelector(".box-base");
-  const boxLid = document.querySelector(".box-lid");
+  const mainContainer = document.querySelector(".main-container");
 
   let isOpen = false;
 
   boxBase.addEventListener("click", function () {
-    if (isOpen) {
-      boxLid.style.transform = "rotateX(20deg)";
-    } else {
-      boxLid.style.transform = "rotateX(120deg)";
-    }
     isOpen = !isOpen;
+    mainContainer.classList.toggle("open", isOpen);
   });
 });
