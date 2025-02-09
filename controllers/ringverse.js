@@ -7,3 +7,19 @@ function displaytext() {
     "Hey " + username + " I have a special gift for you " + "💖 !";
 }
 displaytext();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const boxBase = document.querySelector(".box-base");
+  const boxLid = document.querySelector(".box-lid");
+
+  let isOpen = false;
+
+  boxBase.addEventListener("click", function () {
+    if (isOpen) {
+      boxLid.style.transform = "rotateX(20deg)";
+    } else {
+      boxLid.style.transform = "rotateX(120deg)";
+    }
+    isOpen = !isOpen;
+  });
+});
